@@ -13,11 +13,9 @@ abstract public class BaseWork implements Work {
     protected long id;
 
     protected String title;
-    protected List<Contribution> contributions;
+    protected List<Contribution> contributions = new ArrayList();
 
-    public BaseWork() {
-        this.contributions = new ArrayList<>();
-    }
+    public BaseWork() {}
 
     public void setTitle(String title) {
         this.title = title;

@@ -13,7 +13,6 @@ abstract public class BaseContributor implements Contributor {
     protected long id;
 
     public BaseContributor() {
-        this.contributions = new ArrayList<>();
     }
 
     public List<Contribution> getContributions() {
