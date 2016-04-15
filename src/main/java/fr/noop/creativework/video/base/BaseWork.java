@@ -8,7 +8,7 @@ import java.util.List;
 
 abstract public class BaseWork implements Work {
     // Only used for inheritance
-    protected long id;
+    protected Long id;
 
     protected String title;
     protected List<Contribution> contributions = new ArrayList();

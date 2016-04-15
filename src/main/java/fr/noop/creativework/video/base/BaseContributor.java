@@ -10,7 +10,7 @@ abstract public class BaseContributor implements Contributor {
     protected List<Contribution> contributions = new ArrayList();
 
     // Only used for inheritance
-    protected long id;
+    protected Long id;
 
     public BaseContributor() {
     }
