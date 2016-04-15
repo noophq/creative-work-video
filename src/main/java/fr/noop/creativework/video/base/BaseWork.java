@@ -1,8 +1,6 @@
 package fr.noop.creativework.video.base;
 
-import fr.noop.creativework.video.Activity;
 import fr.noop.creativework.video.model.Contribution;
-import fr.noop.creativework.video.model.Contributor;
 import fr.noop.creativework.video.model.Work;
 
 import java.util.ArrayList;
