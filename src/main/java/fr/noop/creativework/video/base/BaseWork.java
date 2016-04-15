@@ -11,6 +11,8 @@ abstract public class BaseWork implements Work {
     protected Long id;
 
     protected String title;
+    protected String description;
+    protected Long duration; // Duration in seconds
     protected List<Contribution> contributions = new ArrayList();
 
     public BaseWork() {}
@@ -21,6 +23,22 @@ abstract public class BaseWork implements Work {
 
     public String getTitle() {
         return this.title;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public long getDuration() {
+        return this.duration;
+    }
+
+    public void setDuration(Long duration) {
+        this.duration = duration;
     }
 
     public List<Contribution> getContributions() {
