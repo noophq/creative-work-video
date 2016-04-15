@@ -7,11 +7,10 @@ import fr.noop.creativework.video.model.Contribution;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by clebeaupin on 18/12/15.
- */
 public class Person extends BasePerson {
-    private Long id;
+    public Person() {
+        super();
+    }
 
     public Person(String fullname) {
         super(fullname);

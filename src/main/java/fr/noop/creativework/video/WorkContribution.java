@@ -9,7 +9,6 @@ import fr.noop.creativework.video.model.Work;
  * Created by clebeaupin on 18/12/15.
  */
 public class WorkContribution extends BaseContribution {
-    private Long id;
 
     public Long getId() {
         return id;

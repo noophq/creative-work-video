@@ -3,8 +3,6 @@ package fr.noop.creativework.video;
 import fr.noop.creativework.video.base.BaseFilm;
 
 public class Film extends BaseFilm {
-    private Long id;
-
     public Film() {}
     public Film(String title) {
         super(title);

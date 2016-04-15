@@ -3,7 +3,6 @@ package fr.noop.creativework.video;
 import fr.noop.creativework.video.base.BaseEpisode;
 
 public class Episode extends BaseEpisode {
-    private Long id;
 
     public Episode(String title) {
         super(title);
