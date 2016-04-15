@@ -1,16 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+<entity-mappings xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                 xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm
-                        http://java.sun.com/xml/ns/persistence/orm_1_0.xsd"
-                 version="1.0">
+                 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm
+        http://xmlns.jcp.org/xml/ns/persistence/orm_2_1.xsd" version="2.1">
     <package>fr.noop.creativework.video</package>
     <mapped-superclass class="fr.noop.creativework.video.base.BaseProducedWork" access="FIELD">
         <attributes>
-            <basic name="title" />
             <basic name="originalTitle" />
             <basic name="productionYear" />
-            <transient name="directors" />
+            <many-to-many name="directors" target-entity="fr.noop.creativework.video.base.BaseContributor">
+                <order-column name="order_index" nullable="false" />
+                <join-table name="work_director">
+                    <join-column name="work_id" />
+                    <inverse-join-column name="contributor_id" />
+                    <unique-constraint>
+                        <column-name>work_id</column-name>
+                        <column-name>contributor_id</column-name>
+                        <column-name>order_index</column-name>
+                    </unique-constraint>
+                </join-table>
+                <cascade>
+                    <cascade-merge/>
+                </cascade>
+            </many-to-many>
+            <element-collection name="productionCountries" target-class="fr.noop.creativework.video.Country">
+                <collection-table name="work_production_country">
+                    <join-column name="work_id" />
+                </collection-table>
+            </element-collection>
             <transient name="producers" />
             <transient name="actors" />
             <transient name="releaseDate" />
@@ -71,6 +88,11 @@
             <id name="id">
                 <generated-value strategy="AUTO" />
             </id>
+            <basic name="title" />
+            <basic name="description">
+                <column length="16384" />
+            </basic>
+            <basic name="duration" />
             <one-to-many name="contributions" mapped-by="work" target-entity="fr.noop.creativework.video.base.BaseContribution">
                 <cascade>
                     <cascade-all/>
