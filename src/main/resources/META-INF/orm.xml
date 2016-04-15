@@ -78,5 +78,9 @@
             </one-to-many>
         </attributes>
     </entity>
-
+    <embeddable class="fr.noop.creativework.video.Country" access="FIELD">
+        <attributes>
+            <basic name="code" />
+        </attributes>
+    </embeddable>
 </entity-mappings>
