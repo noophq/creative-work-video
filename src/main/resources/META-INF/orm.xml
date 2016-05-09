@@ -8,7 +8,7 @@
         <attributes>
             <basic name="originalTitle" />
             <basic name="productionYear" />
-            <many-to-many name="directors" target-entity="fr.noop.creativework.video.base.BaseContributor">
+            <many-to-many name="directors" fetch="EAGER" target-entity="fr.noop.creativework.video.base.BaseContributor">
                 <order-column name="order_index" nullable="false" />
                 <join-table name="work_director">
                     <join-column name="work_id" />
@@ -23,7 +23,7 @@
                     <cascade-merge/>
                 </cascade>
             </many-to-many>
-            <element-collection name="productionCountries" target-class="fr.noop.creativework.video.Country">
+            <element-collection name="productionCountries" fetch="EAGER" target-class="fr.noop.creativework.video.Country">
                 <collection-table name="work_production_country">
                     <join-column name="work_id" />
                 </collection-table>
@@ -74,7 +74,7 @@
             <id name="id">
                 <generated-value strategy="AUTO" />
             </id>
-            <one-to-many name="contributions" mapped-by="contributor" target-entity="fr.noop.creativework.video.base.BaseContribution">
+            <one-to-many name="contributions" fetch="EAGER" mapped-by="contributor" target-entity="fr.noop.creativework.video.base.BaseContribution">
                 <cascade>
                     <cascade-all/>
                 </cascade>
@@ -93,7 +93,7 @@
                 <column length="16384" />
             </basic>
             <basic name="duration" />
-            <one-to-many name="contributions" mapped-by="work" target-entity="fr.noop.creativework.video.base.BaseContribution">
+            <one-to-many name="contributions" fetch="EAGER" mapped-by="work" target-entity="fr.noop.creativework.video.base.BaseContribution">
                 <cascade>
                     <cascade-all/>
                 </cascade>
