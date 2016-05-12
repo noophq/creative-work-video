@@ -45,6 +45,10 @@ abstract public class BaseWork implements Work {
         return this.contributions;
     }
 
+    public void setContributions(List<Contribution> contributions) {
+        this.contributions = contributions;
+    }
+
     public void addContribution(Contribution contribution) {
         this.contributions.add(contribution);
     }
