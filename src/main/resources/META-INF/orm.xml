@@ -52,7 +52,10 @@
             <id name="id">
                 <generated-value strategy="AUTO" />
             </id>
-            <basic name="activity" />
+            <basic name="activity">
+                <column length="255" />
+                <enumerated>STRING</enumerated>
+            </basic>
             <many-to-one name="contributor" target-entity="fr.noop.creativework.video.base.BaseContributor">
                 <join-column name="contributor_id" />
                 <cascade>
