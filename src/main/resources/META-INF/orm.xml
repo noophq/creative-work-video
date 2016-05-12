@@ -77,7 +77,8 @@
             <id name="id">
                 <generated-value strategy="AUTO" />
             </id>
-            <one-to-many name="contributions" fetch="EAGER" mapped-by="contributor" target-entity="fr.noop.creativework.video.base.BaseContribution">
+            <one-to-many name="contributions" fetch="LAZY" mapped-by="contributor" orphan-removal="true"
+                         target-entity="fr.noop.creativework.video.base.BaseContribution">
                 <cascade>
                     <cascade-all/>
                 </cascade>
@@ -96,7 +97,8 @@
                 <column length="16384" />
             </basic>
             <basic name="duration" />
-            <one-to-many name="contributions" fetch="EAGER" mapped-by="work" target-entity="fr.noop.creativework.video.base.BaseContribution">
+            <one-to-many name="contributions" fetch="LAZY" mapped-by="work" orphan-removal="true"
+                         target-entity="fr.noop.creativework.video.base.BaseContribution">
                 <cascade>
                     <cascade-all/>
                 </cascade>
