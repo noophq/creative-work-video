@@ -110,4 +110,9 @@
             <basic name="code" />
         </attributes>
     </embeddable>
+    <embeddable class="fr.noop.creativework.video.Language" access="FIELD">
+        <attributes>
+            <basic name="code" />
+        </attributes>
+    </embeddable>
 </entity-mappings>
