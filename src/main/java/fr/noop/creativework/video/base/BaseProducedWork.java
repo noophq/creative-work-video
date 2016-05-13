@@ -3,6 +3,8 @@ package fr.noop.creativework.video.base;
 import fr.noop.creativework.video.model.Contributor;
 import fr.noop.creativework.video.model.Country;
 import fr.noop.creativework.video.model.Produced;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -11,8 +13,11 @@ import java.util.List;
 abstract public class BaseProducedWork extends BaseWork implements Produced {
     protected String originalTitle;
     protected Integer productionYear;
+
+    @Fetch(FetchMode.SELECT)
     protected List<Country> productionCountries = new ArrayList();
 
+    @Fetch(FetchMode.SELECT)
     protected List<Contributor> directors = new ArrayList<>();
     protected List<Contributor> producers;
     protected List<Contributor> actors;
